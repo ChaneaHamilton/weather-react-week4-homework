@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import axios from "axios";
 import "./Weather.css";
@@ -59,19 +61,23 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast
+          coordinates={weatherData.coordinates}
+          city={weatherData.city}
+        />
         <footer>
           This project was coded by{" "}
           <a
-            href="https://www.shecodes.io/"
+            href="https://github.com/ChaneaHamilton"
             target="_blank"
             rel="noopener noreferrer"
           >
-            SheCodes
+            Chanea Hamilton
           </a>{" "}
           and is{" "}
           <a
-            href="https://github.com/shecodesio/weather"
+            href="https://github.com/ChaneaHamilton/weather-react-week4-homework"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -79,7 +85,7 @@ export default function Weather(props) {
           </a>{" "}
           and{" "}
           <a
-            href="https://shecodes-weather.netlify.app/"
+            href="https://chanea-weather.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
